@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/CustomViewRelativeLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusableInTouchMode="false"
+    android:padding="6dip" >
+
+    <ImageView
+        android:id="@+id/file_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6dip"
+        android:focusableInTouchMode="false" />
+
+    <TextView
+        android:id="@+id/file_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:focusableInTouchMode="false"
+        android:lines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+</LinearLayout>
