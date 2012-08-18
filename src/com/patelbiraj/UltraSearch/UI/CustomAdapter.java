@@ -102,8 +102,7 @@ public class CustomAdapter extends ArrayAdapter<InformationHolder> {
 				&& information instanceof HeaderInformationHolder) {
 			convertView = mInflater
 					.inflate(R.layout.list_header, parent, false);
-			TextView textView = (TextView) convertView // TODO 8June: variable
-														// name
+			TextView textView = (TextView) convertView
 					.findViewById(R.id.list_header_title);
 			textView.setText(((HeaderInformationHolder) information)
 					.getItemName());

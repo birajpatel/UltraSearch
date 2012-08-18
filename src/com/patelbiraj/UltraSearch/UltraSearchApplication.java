@@ -14,5 +14,5 @@ public class UltraSearchApplication extends Application {
 		return getContext();
 	}
 	
-
+	
 }

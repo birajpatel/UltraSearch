@@ -3,9 +3,6 @@
  */
 package com.patelbiraj.UltraSearch.Utils;
 
-
-
-
 /**
  * The Class Constants for all the constant values in the application.
  */
@@ -61,17 +58,18 @@ public class Constants {
 		public static final String FORMAT_APK = ".apk";
 		public static final String FORMAT_TEXT = ".txt";
 
-		public static final int TYPE_PDF = 0;
-		public static final int TYPE_ZIP = 1;
-		public static final int TYPE_PICTURE = 2;
-		public static final int TYPE_MUSIC = 3;
-		public static final int TYPE_VIDEO = 4;
-		public static final int TYPE_DOC = 5;
-		public static final int TYPE_XLS = 6;
-		public static final int TYPE_PPT = 7;
-		public static final int TYPE_APK = 8;
-		public static final int TYPE_TEXT = 9;
-		public static final int TYPE_UNKNOWN = 10;
+		public static final int TYPE_DIRECTORY = 0;
+		public static final int TYPE_MUSIC = 1;
+		public static final int TYPE_VIDEO = 2;
+		public static final int TYPE_PICTURE = 3;
+		public static final int TYPE_APK = 4;
+		public static final int TYPE_ZIP = 5;
+		public static final int TYPE_PDF = 6;
+		public static final int TYPE_DOC = 7;
+		public static final int TYPE_XLS = 8;
+		public static final int TYPE_PPT = 9;
+		public static final int TYPE_TEXT = 10;
+		public static final int TYPE_UNKNOWN = 11;
 	}
 
 }
