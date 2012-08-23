@@ -11,7 +11,7 @@ public class UltraSearchApplication extends Application {
 	 * @return the context
 	 */
 	public static final Context getContext(){
-		return getContext();
+		return getContext(); 
 	}
 	
 	
