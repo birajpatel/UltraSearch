@@ -2,16 +2,22 @@ package com.patelbiraj.UltraSearch.Utils;
 
 import static com.patelbiraj.UltraSearch.Utils.Constants.FileFormatConstants.*;
 
+import static com.patelbiraj.UltraSearch.Utils.Constants.*;
+import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UtilityClass.
+ */
 public class UtilityClass {
 
+	/** The tag. */
 	private static String TAG = "UtilityClass";
 
 	/**
 	 * Gets the file type from extention.
-	 * 
-	 * @param extension
-	 *            the extension
+	 *
+	 * @param itemExtension the item extension
 	 * @return the file type from extention
 	 */
 	public static final int getFileTypeFromExtention(String itemExtension) {
@@ -75,4 +81,88 @@ public class UtilityClass {
 			return TYPE_UNKNOWN;
 		}
 	}
+
+	/**
+	 * Gets the extension list as per search category like pix,videos,music.
+	 * 
+	 * @param searchCategory
+	 *            the search category
+	 * @return the extension list
+	 */
+	public static final ArrayList<String> getExtensionList(int searchCategory) {
+		if (searchCategory == SEARCH_CATEGORY_DOCUMENTS) {
+			return selectedDocFormats();
+		}
+		if (searchCategory == SEARCH_CATEGORY_PICTURES) {
+			return selectedPixFormats();
+		}
+		if (searchCategory == SEARCH_CATEGORY_MUSIC) {
+			return selectedMusicFormats();
+		}
+		if (searchCategory == SEARCH_CATEGORY_VIDEOS) {
+			return selectedVideoFormats();
+		}
+		return null;
+	}
+
+	/**
+	 * Selected video formats.
+	 *
+	 * @return the array list
+	 */
+	private static ArrayList<String> selectedVideoFormats() {
+		ArrayList<String> extensionList = new ArrayList<String>();
+		for (String extension : VIDEO_FORMATS) {
+			if (/* selection criteria */true) {
+				extensionList.add(extension);
+			}
+		}
+		return extensionList;
+	}
+
+	/**
+	 * Selected music formats.
+	 *
+	 * @return the array list
+	 */
+	private static ArrayList<String> selectedMusicFormats() {
+		ArrayList<String> extensionList = new ArrayList<String>();
+		for (String extension : MUSIC_FORMATS) {
+			if (/* selection criteria */true) {
+				extensionList.add(extension);
+			}
+		}
+		return extensionList;
+	}
+
+	/**
+	 * Selected pix formats.
+	 *
+	 * @return the array list
+	 */
+	private static ArrayList<String> selectedPixFormats() {
+		ArrayList<String> extensionList = new ArrayList<String>();
+		for (String extension : PIX_FORMATS) {
+			if (/* selection criteria */true) {
+				extensionList.add(extension);
+			}
+		}
+		return extensionList;
+	}
+
+	/**
+	 * Selected doc formats.
+	 *
+	 * @return the array list
+	 */
+	private static ArrayList<String> selectedDocFormats() {
+		ArrayList<String> extensionList = new ArrayList<String>();
+		for (String extension : DOC_FORMATS) {
+			if (/* selection criteria */true) {
+				extensionList.add(extension);
+			}
+		}
+		return extensionList;
+	}
+
 }

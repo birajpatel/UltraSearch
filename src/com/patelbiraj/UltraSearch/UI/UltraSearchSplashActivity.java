@@ -11,42 +11,25 @@ import android.os.Environment;
 import android.util.Log;
 
 import com.patelbiraj.UltraSearch.R;
+import com.patelbiraj.UltraSearch.BackGroundTasks.FileSystemRefresher;
+import com.patelbiraj.UltraSearch.BackGroundTasks.FileSystemRefresher.FileScannerCallbacks;
 import com.patelbiraj.UltraSearch.Utils.LogUtils;
 
 public class UltraSearchSplashActivity extends Activity implements
-		MediaScannerConnectionClient {
+		FileScannerCallbacks {
 
 	private String TAG = "UltraSearchSplashActivity";
 
-	/** The media scanner connection object used to scan the file system. */
-	private MediaScannerConnection mMediaScannerConnectionObj = null;
+	
+	private FileSystemRefresher mFileSystemRefresher = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.ultra_search_splash);
-		prepareMediaScanner();
-		startMediaScanner();
-	}
-
-	/**
-	 * Prepare media scanner object before starting scanning.
-	 */
-	private void prepareMediaScanner() {
-		sendBroadcast(new Intent(
-				Intent.ACTION_MEDIA_MOUNTED,
-				Uri.parse("file://" + Environment.getExternalStorageDirectory())));
-		mMediaScannerConnectionObj = new MediaScannerConnection(this, this);
-	}
-
-	/**
-	 * This will start media scanner every time this application is launched so
-	 * Media Store will have the latest entry of file system.
-	 */
-	private void startMediaScanner() {
-		if (null != mMediaScannerConnectionObj) {
-			mMediaScannerConnectionObj.connect();
-		}
+		mFileSystemRefresher = new FileSystemRefresher(this,
+				getApplicationContext());
+		mFileSystemRefresher.startScanner();
 	}
 
 	/**
@@ -63,31 +46,22 @@ public class UltraSearchSplashActivity extends Activity implements
 		super.onPause();
 		if (isFinishing()) {
 			LogUtils.i(TAG, "Activity Destroying");
-			if (null != mMediaScannerConnectionObj
-					&& mMediaScannerConnectionObj.isConnected()) {
-				mMediaScannerConnectionObj.disconnect();
+			if (null != mFileSystemRefresher) {
+				LogUtils.i(TAG, "disconnecting the refresher");
+				mFileSystemRefresher.disconnect();
 			}
 		}
 	}
 
-	// Media Scanner Methods >>>>>>>>>>>>>>>>>>>>>>>>
 	@Override
 	public void onMediaScannerConnected() {
-		Log.i(TAG, "onMediaScannerConnected>>>>>>>>>>>>>>>>>>");
-		mMediaScannerConnectionObj.scanFile(MNT_FOLDER, null);
-
+		LogUtils.i(TAG, "onMediaScannerConnected callback");
 	}
 
 	@Override
 	public void onScanCompleted(String path, Uri uri) {
-		Log.i(TAG, "onScanCompleted<<<<<<<<<<<<<<<");
-		if (null != mMediaScannerConnectionObj
-				&& mMediaScannerConnectionObj.isConnected()) {
-			mMediaScannerConnectionObj.disconnect();
-		}
+		LogUtils.i(TAG, "onScanCompleted callback");
 		finishSplashActivity();
 	}
-
-	// Media Scanner Methods <<<<<<<<<<<<<<<<<<<<<<<<
 
 }

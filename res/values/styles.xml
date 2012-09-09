@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+	
+    <!-- Next버튼 Button -->
+    <style name="bottom_action_bar">
+        <item name="android:layout_width">wrap_content</item> <!--  240px(360dp)  -->  
+        <item name="android:layout_height">wrap_content</item> <!--  95px(63.3dp)  -->  
+        <item name="android:layout_weight">1</item>  
+        <item name="android:clickable">true</item>
+        <item name="android:background">@null</item>        
+    </style>
+
+</resources>

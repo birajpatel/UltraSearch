@@ -8,7 +8,7 @@ import android.util.Log;
 public class LogUtils {
 
 	private static final String TAG = "LogUtils";
-	
+
 	/** The logging flag to enable/disable logging. */
 	private static boolean isLogging = true;
 
@@ -47,7 +47,7 @@ public class LogUtils {
 	public static void d(String tag, String msg) {
 		if (tag != null && msg != null) {
 			if (isLogging())
-				Log.d(tag, msg);
+				Log.d("UltraSearch_log_" + tag, msg);
 		} else {
 			LogUtils.i(TAG,
 					"In LogUtils function (Debug) TAG or message is null");
@@ -65,7 +65,7 @@ public class LogUtils {
 	public static void i(String tag, String msg) {
 		if (tag != null && msg != null) {
 			if (isLogging())
-				Log.i(tag, msg);
+				Log.i("UltraSearch_log_" + tag, msg);
 		} else {
 			LogUtils.i(TAG,
 					"In LogUtils function (Info) TAG or message is null");
@@ -83,7 +83,7 @@ public class LogUtils {
 	public static void w(String tag, String msg) {
 		if (tag != null && msg != null) {
 			if (isLogging())
-				Log.w(tag, msg);
+				Log.w("UltraSearch_log_" + tag, msg);
 		} else {
 			LogUtils.i(TAG,
 					"In LogUtils function (Warn) TAG or message is null");
@@ -101,7 +101,7 @@ public class LogUtils {
 	public static void e(String tag, String msg) {
 		if (tag != null && msg != null) {
 			if (isLogging())
-				Log.e(tag, msg);
+				Log.e("UltraSearch_log_" + tag, msg);
 		} else {
 			LogUtils.i(TAG,
 					"In LogUtils function (Error) TAG or message is null");

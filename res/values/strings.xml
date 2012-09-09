@@ -3,5 +3,6 @@
 
     <string name="hello">Hello World!</string>
     <string name="app_name">MainActivity</string>
+    <string name="test_string">hello world i am a test string , very long one.</string>
 
 </resources>

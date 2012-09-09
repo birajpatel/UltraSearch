@@ -2,26 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/CustomViewRelativeLayout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:focusableInTouchMode="false"
-    android:padding="6dip" >
+    android:padding="5dip" >
 
     <ImageView
         android:id="@+id/file_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="6dip"
+        android:background="@drawable/unknown_file"
         android:focusableInTouchMode="false" />
 
     <TextView
         android:id="@+id/file_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
         android:focusableInTouchMode="false"
         android:lines="1"
         android:scrollHorizontally="true"
         android:singleLine="true"
+        android:text="@string/test_string"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
+
+    <CheckBox
+        android:id="@+id/file_check_box"
+        android:focusableInTouchMode="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
