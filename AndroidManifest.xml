@@ -10,7 +10,7 @@
         android:name=".UltraSearchApplication"
         android:label="@string/app_name" >
         <activity
-            android:name="com.patelbiraj.ultrasearch.UI.UltraSearchSplashActivity"
+            android:name="com.patelbiraj.ultrasearch.ui.UltraSearchSplashActivity"
             android:configChanges="orientation|screenSize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,10 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".UI.UltraListViewActivity"
-            UI.UltraListViewActivitye.UI.UltraListViewActivity="" >
+        <activity android:name=".ui.UltraListViewActivity" >
         </activity>
+
+        <!-- private content provider, exported should be true to share the content provider data. -->
+        <provider
+            android:name="com.patelbiraj.ultrasearch.contentprovider.UltraSearchContentProvider"
+            android:authorities="com.patelbiraj.ultrasearch.contentprovider.UltraSearchContentProvider"
+            android:exported="false" />
     </application>
 
 </manifest>
