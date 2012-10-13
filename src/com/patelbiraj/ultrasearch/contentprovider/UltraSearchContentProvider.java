@@ -21,8 +21,6 @@ import static com.patelbiraj.ultrasearch.utils.Constants.ContentProviderConstant
  * efficient way to store and retrieve users data in persistent storage like
  * SQLite database
  * 
- * Preferences like which data is to be synced to BUA+ server. Auto Backup
- * timing preference. Network usage preference.
  * 
  */
 public class UltraSearchContentProvider extends ContentProvider {

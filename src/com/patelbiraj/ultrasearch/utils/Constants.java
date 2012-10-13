@@ -96,22 +96,11 @@ public class Constants {
 				FORMAT_M4E, FORMAT_DV, FORMAT_F4V, FORMAT_FLV, FORMAT_RV,
 				FORMAT_RM, FORMAT_RAM, FORMAT_MP2V };
 
-		/** The Constant SEARCH_CATEGORY_DIRECTORY. */
 		public static final int SEARCH_CATEGORY_DIRECTORY = 0;
-
-		/** The Constant SEARCH_CATEGORY_MUSIC. */
 		public static final int SEARCH_CATEGORY_MUSIC = 1;
-
-		/** The Constant SEARCH_CATEGORY_VIDEOS. */
 		public static final int SEARCH_CATEGORY_VIDEOS = 2;
-
-		/** The Constant SEARCH_CATEGORY_PICTURES. */
 		public static final int SEARCH_CATEGORY_PICTURES = 3;
-
-		/** The Constant SEARCH_CATEGORY_DOCUMENTS. */
 		public static final int SEARCH_CATEGORY_DOCUMENTS = 4;
-
-		/** The Constant SEARCH_CATEGORY_OTHERS. */
 		public static final int SEARCH_CATEGORY_OTHERS = 5;
 
 	}

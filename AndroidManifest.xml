@@ -18,7 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.UltraListViewActivity" >
+        <activity
+            android:name=".ui.UltraListViewActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustPan" >
         </activity>
 
         <!-- private content provider, exported should be true to share the content provider data. -->
